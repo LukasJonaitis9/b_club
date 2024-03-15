@@ -9,9 +9,14 @@ Here's the link to demo video -> (Comming soon...)
 B_CLUB (BEER_CLUB) will provide these features: 
 
 ~ Registering account and logging in;
+
 ~ Sharing and discusing with unexperienced beer types, tastes; 
+
 ~ Users can also edit or delete their "memories";
+
 ~ Searching other members "beer experiences";
-~ Adding few but accurate filters (for beer types, colours), what could provide faster search result. 
+
+~ Adding few but accurate filters (for beer types, colours), what could provide faster search result;
+
 ~ Possibility to view and rate other members 'beer tastes experiences' from one to five stars; 
 
