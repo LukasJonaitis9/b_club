@@ -8,20 +8,35 @@ class Types(models.Model):
     Model representing a specific beer type.
     """
     name = models.CharField(max_length=200, help_text='Enter name of a beer type')
-    
-    COLOR_TYPES = (
-        ('d', 'dark'),
-        ('l', 'light')
+
+    MAIN_TYPES = (
+        ('w', 'Wheat beer'),
+        ('l', 'Lager'),
+        ('p', 'Pilsner'),
+        ('i', 'IPA'),
+        ('a', 'ALE'),
+        ('s', 'Stout'),
+        ('b', 'Bock'),
     )
 
-    color = models.CharField(max_length=1, choices=COLOR_TYPES, help_text='Choose dark or light type of a beer')
+    types = models.CharField(max_length=1, choices=MAIN_TYPES, null=True, blank=True, help_text='Chose your type of beer!')
+
+    COLOR_TYPES = (
+        ('l', 'Light / Straw'),
+        ('a', 'Amber'),
+        ('c', 'Copper / Reddish-Brown'),
+        ('b', 'Brown'),
+        ('d', 'Black'),
+    )
+
+    color = models.CharField(max_length=1, choices=COLOR_TYPES, help_text='Choose your colour of beer!')
 
     FILTERED = (
-        ('y', 'filtered'),
-        ('n', 'unfiltered')
+        ('y', 'Filtered'),
+        ('n', 'Unfiltered')
     )
 
-    filtered = models.CharField(max_length=1, choices=FILTERED, null=True, blank=True, help_text='Choose filtered or unfiltered')
+    filtered = models.CharField(max_length=1, choices=FILTERED, null=True, blank=True, help_text='Choose filtered or unfiltered beer!')
 
 
 class Meta:
