@@ -10,9 +10,9 @@ B_CLUB (BEER_CLUB) will provide these features:
 
 ~ Registering account and logging in;
 
-~ Sharing and discusing with unexperienced beer types, tastes; 
+~ Sharing and discusing with others your unexperienced beer types, tastes; 
 
-~ Users can also edit or delete their "memories";
+~ Users can also edit or delete their "tastes and experience memories";
 
 ~ Searching other members "beer experiences";
 
