@@ -1,12 +1,22 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _ 
+from . import models
 
-# Modeliu importas registras 
-from .models import Types, Review
 
-admin.site.register(Types)
 
-# Dekoratorius ir admino klases apibrezimas
-@admin.register(Review)
-class BeerAdmin(admin.ModelAdmin):
-    list_display = ('creator', 'name', 'beertype', 'rating', 'date')
-    list_filter = ('creator', 'name', 'beertype', 'rating')
+class ReviewsAdmin(admin.ModelAdmin):
+    list_display = ['creator', 'name', 'beertype', 'rating', 'date', 'comments']
+    list_filter = ['creator', 'name', 'beertype', 'rating']
+    search_fields = ['name', 'rating']
+    list_editable = ['rating', 'beertype']
+    
+
+class OriginAdmin(admin.ModelAdmin):
+    list_display = ['name', 'types', 'color', 'filtered']
+    list_filter = ['name', 'types', 'color', 'filtered']
+    list_editable = ['types', 'color', 'filtered']
+    search_fields = ['name']
+
+
+admin.site.register(models.Review, ReviewsAdmin)
+admin.site.register(models.Origin, OriginAdmin)
