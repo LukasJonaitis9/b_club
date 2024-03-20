@@ -16,13 +16,13 @@
     </header>
     <section class="messages">
         {% for message in messages %}
-            <p class="message message {{ message.tags }}">{{ message }}</p>
+            <p class="message message-{{ message.tags }}">{{ message }}</p>
         {% endfor %}
     </section>
     <main>{% block content %}{% endblock content %}</main>
     <footer>
         {% block footer %}{% endblock footer %}
-        <p>&copy; 2024 BeerClub</p>
+        <p>&copy; 2024 BeerClub <a style= "float:right", href="https://www.guinness.com/en">Our sponsor "Guinness" brewery</a></p>
     </footer>
 </body>
 </html>

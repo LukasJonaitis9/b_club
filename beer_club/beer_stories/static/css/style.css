@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #2effa8;
+    background-color: #96f2cb;
     display: flex;
     flex-direction: row; 
     align-items: center; /* Centruoja logo aukstyn zemyn */
@@ -74,3 +74,62 @@ a:hover {
     text-decoration: underline;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    background-color: #2effa8;
+    border: 1px solid #2effa875;
+    padding:  0.5rem;
+    margin: 1rem 0;
+}
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+    margin-top: 0;
+}
+
+p, main ul {
+    padding: 0 0.5rem;
+    margin: 1rem 0;
+}
+
+footer p {
+    color: #8f8e8e;
+}
+
+footer a {
+    color: #31629e;
+}
+
+footer a:hover {
+    color: #446b02;
+}
+
+section.message {
+    padding: 0;
+    margin: 0;
+
+}
+
+section.messages .message {
+    padding: 0.5;
+    margin: 0;
+    border-bottom: 1px solid #888888;    
+}
+
+.message-debug {
+    background-color: #004488;
+}
+
+.message.info {
+    background-color: #004488;
+}
+
+.message-success {
+    background-color: #cc99;
+}
+
+.message-warning {
+    background-color: #ffcc99;
+}
+
+.message_error {
+    background-color: #ffaaaa;
+}
