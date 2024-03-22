@@ -1,5 +1,7 @@
 body {
     background-color: #FBB117;
+    background-image: url('/static/img/background.jpg');
+    background-size: contain;
     font-family: sans-serif;
     font-size: 16px;
     display: flex;
@@ -57,10 +59,14 @@ main {
 }
 
 footer {
-    background-color: #2effa8;
+    background-color: #2effa89f;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+footer img {
+    max-height: 24px;
 }
 
 a {
@@ -75,8 +81,6 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    background-color: #2effa8;
-    border: 1px solid #2effa875;
     padding:  0.5rem;
     margin: 1rem 0;
 }
@@ -133,3 +137,18 @@ section.messages .message {
 .message_error {
     background-color: #ffaaaa;
 }
+
+.spacer {
+    flex-grow: 1;
+}
+
+header form select {
+    margin: 1rem;
+    font-size: 100%;
+}
+
+.language-container {
+    float: right;
+    margin-right: 3rem; /* Adjust as needed */
+}
+

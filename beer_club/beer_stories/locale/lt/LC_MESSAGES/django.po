@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-20 09:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+
+#: beer_stories/apps.py:10
+msgid "beer_stories"
+msgstr "alaus_istorijos"
+
+#: beer_stories/models.py:48 beer_stories/models.py:49
+msgid "types"
+msgstr "tipai"
+
+#: beer_stories/models.py:102 beer_stories/models.py:103
+#: beer_stories/templates/base.html:14
+#: beer_stories/templates/beer_stories/review_list.html:4
+msgid "review"
+msgstr "peržiūra"
+
+#: beer_stories/templates/base.html:13
+#: beer_stories/templates/beer_stories/index.html:3
+msgid "dashboard"
+msgstr "suvestinė"
+
+#: beer_stories/templates/base.html:25
+msgid "our sponsor Guinness brewery"
+msgstr "mūsų remėjas, alaus darykla Guinness"
+
+#: beer_stories/templates/beer_stories/index.html:4
+msgid "origins"
+msgstr "kilmės šalys"
+
+#: beer_stories/templates/beer_stories/index.html:5
+msgid "reviews"
+msgstr "peržiūros"
+
+#: beer_stories/templates/beer_stories/index.html:6
+msgid "users"
+msgstr "vartotojai"
+
+#: beer_stories/templates/beer_stories/review_detail.html:6
+msgid "creator"
+msgstr "autorius"
+
+#: beer_stories/templates/beer_stories/review_detail.html:6
+msgid "name of beer"
+msgstr "alaus pavadinimas"
+
+#: beer_stories/templates/beer_stories/review_detail.html:8
+msgid "rated by creator"
+msgstr "autoriaus įvertinimas"
+
+#: beer_stories/templates/beer_stories/review_detail.html:10
+msgid "comments"
+msgstr "komentarai"
+
+#: beer_stories/templates/beer_stories/review_detail.html:12
+msgid "date"
+msgstr "data"
+
+#: beer_stories/templates/beer_stories/review_list.html:2
+msgid "list"
+msgstr "sąrašas"

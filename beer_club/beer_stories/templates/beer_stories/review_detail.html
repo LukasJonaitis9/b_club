@@ -1,14 +1,14 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load i18n %}
 {% block title %}{{ block.super }} | {{ review }}{% endblock title %}
 {% block content %}
 <h1>{{ review.name }}</h1>
 
-<p>Creator: {{ review.creator }} / Name of beer: {{ review.name}}</p>
+<p>{% trans "creator"|capfirst %}: {{ review.creator }} / {% trans "name of beer"|capfirst %}: {{ review.name}}</p>
 
-<p>Rated by creator: {{ review.rating }}</p>
+<p>{% trans "rated by creator"|capfirst %}: {{ review.rating }}</p>
 
-<p>Comments: {{ review.comments}}</p>
+<p>{% trans "comments"|capfirst %}: {{ review.comments}}</p>
 
-<p>Date: {{review.date}}</p>
+<p>{% trans "date"|capfirst %}: {{review.date}}</p>
 
 {% endblock content %}
