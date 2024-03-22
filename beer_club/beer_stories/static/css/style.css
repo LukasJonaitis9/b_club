@@ -1,5 +1,5 @@
 body {
-    background-color: #FBB117;
+    background-color: #FBB1179f;
     background-image: url('/static/img/background.jpg');
     background-size: contain;
     font-family: sans-serif;
@@ -112,7 +112,7 @@ section.message {
 
 }
 
-section.messages .message {
+section.messages .message, ul.errorlist {
     padding: 0.5;
     margin: 0;
     border-bottom: 1px solid #888888;    
@@ -134,7 +134,7 @@ section.messages .message {
     background-color: #ffcc99;
 }
 
-.message_error {
+.message_error, ul.errorlist {
     background-color: #ffaaaa;
 }
 
@@ -152,3 +152,21 @@ header form select {
     margin-right: 3rem; /* Adjust as needed */
 }
 
+main form label {
+    display: inline-block;
+    width: 20vw;
+    min-width: 15rem;
+    font-size: 120%;
+}
+
+main form input,
+main form textarea,
+main form select, 
+main form button {
+    font-size: 120%;
+}
+
+main form .helptext {
+    display: block;
+    font-size: 90%;
+}
