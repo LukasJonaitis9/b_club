@@ -22,6 +22,7 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('beer_stories.urls')),
     path('users/', include('users.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 ]

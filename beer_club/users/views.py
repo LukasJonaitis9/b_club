@@ -10,7 +10,7 @@ def signup(request:HttpRequest) -> HttpResponse:
         if form.is_valid():
             form.save()
             messages.success(request, _("Thank you! You successfully joined BeerClub."))
-            return redirect('index')
+            return redirect('login')
     else:
         form = forms.CreateUserForm()
     return render(request, 'users/signup.html', {
