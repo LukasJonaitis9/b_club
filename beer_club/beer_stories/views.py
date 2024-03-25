@@ -1,7 +1,20 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from django.views import generic
 from . import models
+
+
+class OriginListView(generic.ListView):
+    model = models.Origin
+    template_name= 'beer_stories/reviw_list.html'
+
+
+class OriginDetailView(generic.DetailView):
+    model = models.Origin
+    template_name = 'beer_stories/review_details.html'
 
 
 def index(request: HttpRequest) -> HttpResponse:

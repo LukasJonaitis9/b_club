@@ -4,9 +4,6 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 
 class Origin(models.Model):
-    """
-    Model eprezentuoja alaus types.
-    """
     name = models.CharField(max_length=200, help_text='Enter name of a beer type')
 
     MAIN_TYPES = (
@@ -39,9 +36,6 @@ class Origin(models.Model):
     filtered = models.CharField(max_length=1, choices=FILTERED, null=True, blank=True, help_text='Choose filtered or unfiltered beer!')
 
     def __str__(self):
-        """
-        String reprezentuojantis modelio objekta.
-        """
         return self.name
 
 class Meta:
@@ -51,22 +45,13 @@ class Meta:
 
 
     def __str__(self):
-        """
-        String reprezentuojantis modelio objekta.
-        """
         return self.name
 
     def get_absolute_url(self):
-        """
-        Returns the url to access a particular beer instance.
-        """
         return reverse('types-detail', args=[str(self.id)])
 
 
 class Review(models.Model):
-    """
-    Model representing a specific beer review of a specific user.
-    """
     creator = models.ForeignKey(
         get_user_model(),
         verbose_name=('owner'),
@@ -92,9 +77,6 @@ class Review(models.Model):
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        """
-        String for representing the Model object.
-        """
         return self.name
     
     
@@ -105,13 +87,7 @@ class Meta:
 
     
     def __str__(self):
-        """
-        String for representing the Model object.
-        """
         return self.name
 
     def get_absolute_url(self):
-        """
-        Returns the url to access a particular beer instance.
-        """
         return reverse('review_detail', kwargs={'pk': self.pk})

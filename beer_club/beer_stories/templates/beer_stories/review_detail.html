@@ -2,13 +2,8 @@
 {% block title %}{{ block.super }} | {{ review }}{% endblock title %}
 {% block content %}
 <h1>{{ review.name }}</h1>
-
 <p>{% trans "creator"|capfirst %}: {{ review.creator }} / {% trans "name of beer"|capfirst %}: {{ review.name}}</p>
-
 <p>{% trans "rated by creator"|capfirst %}: {{ review.rating }}</p>
-
 <p>{% trans "comments"|capfirst %}: {{ review.comments}}</p>
-
 <p>{% trans "date"|capfirst %}: {{review.date}}</p>
-
 {% endblock content %}
