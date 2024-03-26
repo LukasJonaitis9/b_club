@@ -11,12 +11,12 @@ class ReviewsAdmin(admin.ModelAdmin):
     list_editable = ['rating', 'beertype']
     
 
-class OriginAdmin(admin.ModelAdmin):
-    list_display = ['name', 'types', 'color', 'filtered']
-    list_filter = ['name', 'types', 'color', 'filtered']
+class TypeAdmin(admin.ModelAdmin):
+    list_display = ['country_name', 'types', 'color', 'filtered']
+    list_filter = ['country_name', 'types', 'color', 'filtered']
     list_editable = ['types', 'color', 'filtered']
     search_fields = ['name']
 
 
 admin.site.register(models.Review, ReviewsAdmin)
-admin.site.register(models.Origin, OriginAdmin)
+admin.site.register(models.Type, TypeAdmin)

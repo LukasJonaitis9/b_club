@@ -1,7 +1,11 @@
 {% extends "base.html" %}{% load i18n %}
 {% block title %}{{ block.super }} | {{ review }}{% endblock title %}
 {% block content %}
+<<<<<<< Updated upstream
 <h1>{{ review.name }}</h1>
+=======
+<h1>{{ review.creator }}</h1>
+>>>>>>> Stashed changes
 <p>{% trans "creator"|capfirst %}: {{ review.creator }} / {% trans "name of beer"|capfirst %}: {{ review.name}}</p>
 <p>{% trans "rated by creator"|capfirst %}: {{ review.rating }}</p>
 <p>{% trans "comments"|capfirst %}: {{ review.comments}}</p>

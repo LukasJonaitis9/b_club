@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ block.super }} {% trans "types" %}{% endblock title %}
+{% block content %}
+<h1>{% trans "types"|capfirst %}</h1>
+<div class="toolbar">
+    <a class="button" href="{% url "type_create" %}">{% trans "create new"|capfirst %}</a>
+</div>
+<ul>
+{% for type in type_list %}
+    <li>
+        <a href="{% url "type_detail" type.pk %}">{{ type.types }}</a>
+        ({{ types.review.count }})
+    </li>
+{% endfor %}
+</ul>
+{% endblock content %}

@@ -14,6 +14,7 @@
         <span class='logo'>BeerClub</span>
         <ul class='nav'>
             <li><a href="{% url 'index' %}">{% trans "dashboard"|capfirst %}</a></li>
+            <li><a href="{% url "type_list" %}">{% trans "types"|capfirst %}</a></li>
             <li><a href="{% url 'review_list' %}">{% trans "review"|capfirst %}</a></li>
         </ul>
         <span class="spacer"></span>

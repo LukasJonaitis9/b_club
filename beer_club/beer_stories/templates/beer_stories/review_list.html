@@ -5,7 +5,7 @@
 <ul>
 {% for review in review_list %}
     <li>
-        <a href="{% url 'review_detail' review.pk %}">{{ review.name }}</a>
+        <a href="{% url 'review_detail' review.pk %}">{{ review.creator }}</a>
         <span stype='float:right;'>{{ review.date }}</span>
     </li>
 {% endfor %}
