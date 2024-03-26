@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream
-=======
 from django.contrib import messages
->>>>>>> Stashed changes
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
@@ -11,16 +8,6 @@ from django.views import generic
 from . import models
 
 
-<<<<<<< Updated upstream
-class OriginListView(generic.ListView):
-    model = models.Origin
-    template_name= 'beer_stories/reviw_list.html'
-
-
-class OriginDetailView(generic.DetailView):
-    model = models.Origin
-    template_name = 'beer_stories/review_details.html'
-=======
 class TypeListView(generic.ListView):
     model = models.Type
     template_name= 'beer_stories/type_list.html'
@@ -43,7 +30,6 @@ class TypeCreateView(LoginRequiredMixin,generic.CreateView):
         form.instance.owner = self.request.user
         return super().form_valid(form)
     
->>>>>>> Stashed changes
 
 
 def index(request: HttpRequest) -> HttpResponse:

@@ -3,13 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext as _
 
-<<<<<<< Updated upstream
-class Origin(models.Model):
-    name = models.CharField(max_length=200, help_text='Enter name of a beer type')
-
-=======
 class Type(models.Model):
->>>>>>> Stashed changes
     MAIN_TYPES = (
         ('Wheat beer', 'Wheat beer'),
         ('Pilsner', 'Pilsner'),
@@ -39,11 +33,7 @@ class Type(models.Model):
     filtered = models.CharField(max_length=1, choices=FILTERED, null=True, blank=True, help_text='Choose filtered or unfiltered beer!')
 
     def __str__(self):
-<<<<<<< Updated upstream
-        return self.name
-=======
         return self.country_name
->>>>>>> Stashed changes
 
 class Meta:
     verbose_name = _("types")
@@ -52,11 +42,7 @@ class Meta:
 
 
     def __str__(self):
-<<<<<<< Updated upstream
-        return self.name
-=======
         return self.country_name
->>>>>>> Stashed changes
 
     def get_absolute_url(self):
         return reverse('types-detail', args=[str(self.id)])
@@ -101,8 +87,4 @@ class Meta:
         return self.name
 
     def get_absolute_url(self):
-<<<<<<< Updated upstream
         return reverse('review_detail', kwargs={'pk': self.pk})
-=======
-        return reverse('review_detail', kwargs={'pk': self.pk})
->>>>>>> Stashed changes
