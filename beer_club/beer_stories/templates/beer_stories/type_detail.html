@@ -2,8 +2,5 @@
 {% block title %}{{ block.super }} | {{ type }}{% endblock title %}
 {% block content %}
 <h1>{{ type.types }}</h1>
-<p>{% trans "types"|capfirst %}: {{ type.types }}</p>
-<p>{% trans "country_name"|capfirst %}: {{ type.country_name }}</p>
-<p>{% trans "color"|capfirst %}: {{ type.color }}</p>
-<p>{% trans "filtered"|capfirst %}: {{ type.filtered }}</p>
+<p>{% trans "types"|capfirst %}: {{ type.types.count }}</p>
 {% endblock content %}

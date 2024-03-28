@@ -5,17 +5,17 @@ from . import models
 
 
 class ReviewsAdmin(admin.ModelAdmin):
-    list_display = ['creator', 'name', 'beertype', 'rating', 'date', 'comments']
+    list_display = ['creator','country_name', 'color', 'filtered','name', 'beertype', 'rating', 'date', 'comments']
     list_filter = ['creator', 'name', 'beertype', 'rating']
-    search_fields = ['name', 'rating']
+    search_fields = ['name', 'rating', 'color']
     list_editable = ['rating', 'beertype']
     
 
 class TypeAdmin(admin.ModelAdmin):
-    list_display = ['country_name', 'types', 'color', 'filtered']
-    list_filter = ['country_name', 'types', 'color', 'filtered']
-    list_editable = ['types', 'color', 'filtered']
-    search_fields = ['name']
+    list_display = ['types']
+    list_filter = ['types']
+    list_editable = []
+    search_fields = ['types']
 
 
 admin.site.register(models.Review, ReviewsAdmin)

@@ -16,11 +16,12 @@ class TypeListView(generic.ListView):
 class TypeDetailView(generic.DetailView):
     model = models.Type
     template_name = 'beer_stories/type_details.html'
+    
 
 class TypeCreateView(LoginRequiredMixin,generic.CreateView):
     model = models.Type
     template_name = 'beer_stories/type_create.html'
-    fields = ('types',)
+    fields = ('types', 'country_name', 'color', 'filtered')
     
     def get_success_url(self) -> str:
         messages.success(self.request, _('type created succesfully').capitalize())
@@ -29,7 +30,12 @@ class TypeCreateView(LoginRequiredMixin,generic.CreateView):
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super().form_valid(form)
-    
+
+
+class TypetUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+    model = models.Type
+    template_name = 'beer_stories/type_update.html'
+    field = ('types', 'country_name', 'color', 'filtered')
 
 
 def index(request: HttpRequest) -> HttpResponse:

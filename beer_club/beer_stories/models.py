@@ -3,6 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext as _
 
+
 class Type(models.Model):
     MAIN_TYPES = (
         ('Wheat beer', 'Wheat beer'),
@@ -13,8 +14,45 @@ class Type(models.Model):
         ('Bock', 'Bock'),
         ('Lager', 'Lager'),
     )
-    types = models.CharField(max_length=10, choices=MAIN_TYPES, null=True, blank=True, help_text='Chose your type of beer!')
-    country_name = models.CharField(max_length=200, help_text='Enter name of a beer type')
+    types = models.CharField(max_length=10,
+        choices=MAIN_TYPES, null=True, blank=True,
+        help_text='Chose your type of beer!'
+        )
+    
+
+    def __str__(self):
+        return self.types
+    
+class Meta:
+    verbose_name = _("types")
+    verbose_name_plural = _("types")
+    ralated_name = ['types']
+
+
+    def __str__(self):
+        return self.types
+
+    def get_absolute_url(self):
+        return reverse('types_detail', args=[str(self.id)])
+
+
+class Review(models.Model):
+    creator = models.ForeignKey(
+        get_user_model(),
+        verbose_name=('owner'),
+        on_delete=models.SET_NULL,
+        null=True, 
+        blank=True
+        )
+    image = models.URLField(max_length=2000, help_text='Enter URL for beer image', blank=True, default='')
+    name = models.CharField(max_length=200, help_text='Enter beer name')
+
+    
+# NEPRIDETI DAR
+   # beertype = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
+
+   # Origin_country = models.CharField(max_length=200, help_text='Enter name of a beer type')
+    
     COLOR_TYPES = (
         ('l', 'Light / Straw'),
         ('a', 'Amber'),
@@ -31,36 +69,6 @@ class Type(models.Model):
     )
 
     filtered = models.CharField(max_length=1, choices=FILTERED, null=True, blank=True, help_text='Choose filtered or unfiltered beer!')
-
-    def __str__(self):
-        return self.country_name
-
-class Meta:
-    verbose_name = _("types")
-    verbose_name_plural = _("types")
-    ralated_name = ['country_name']
-
-
-    def __str__(self):
-        return self.country_name
-
-    def get_absolute_url(self):
-        return reverse('types-detail', args=[str(self.id)])
-
-
-class Review(models.Model):
-    creator = models.ForeignKey(
-        get_user_model(),
-        verbose_name=('owner'),
-        on_delete=models.SET_NULL,
-        null=True, 
-        blank=True
-        )
-    image = models.URLField(max_length=2000, help_text='Enter URL for beer image', blank=True, default='')
-    name = models.CharField(max_length=200, help_text='Enter beer name')
-    beertype = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
-    # Foreign Key used because beer can only have one type, but types of beer can be attributable to multiple beers
-    # CASCADE TRINA VISKA ARBA SET_NULL VISAS PERZIURAS PADARYS BE ALAYS TIPO 
     RATINGS = (
         ('1', 'very bad'),
         ('2', 'bad'),
